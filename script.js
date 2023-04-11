@@ -24,3 +24,32 @@ console.log(" ")
 console.log("===================================")
 console.log(" ")
 myCar.drive(456789);
+
+
+
+class Product {
+  constructor(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+}
+
+class Milk extends Product {
+  constructor(name, price, fatPercent) {
+    super(name, price);
+    this.fatPercent = fatPercent;
+  }
+}
+const milk1 = new Milk("Milka", 2.7, 3);
+const milk2 = new Milk("Azer sud", 1.8, 1.8);
+const milk3 = new Milk("Milla", 2.3, 0.7);
+
+const milkArray = [milk1, milk2, milk3];
+
+let sumFatPercent = 0;
+for (let i = 0; i < milkArray.length; i++) {
+  sumFatPercent += milkArray[i].fatPercent;
+}
+const averageFatPercent = sumFatPercent / milkArray.length;
+
+console.log(`FatPercent-in ededi ortasi ${averageFatPercent} dir.`);
